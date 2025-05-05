@@ -28,4 +28,9 @@ jobs:
         go mod init ssl_handshake
         go mod tidy
         go build -o builds/
-
+    - name: Upload tag version for artifactory
+      uses: actions/upload-artifact@v4
+      with:
+        name: ssl_handshake
+        path: builds/ssl_handshake
+        if-no-files-found: error
