@@ -29,8 +29,3 @@ jobs:
         go mod tidy
         go build -o builds/
 
-    - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-output
-          path: builds/
