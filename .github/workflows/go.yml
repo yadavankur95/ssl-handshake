@@ -24,6 +24,7 @@ jobs:
       run: |
         mkdir binaries
         DOCKER_BUILDKIT=1 docker build --output binaries .
+        tar -cvf binaries.tgz binaries
         
     - name: Upload tag version for artifactory
       uses: actions/upload-artifact@v4
@@ -39,7 +40,7 @@ jobs:
       run: |
         ls
         ls binaries
-        gh release create v1.2.3 binaries
+        gh release create v1.2.3 binaries.tgz
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
