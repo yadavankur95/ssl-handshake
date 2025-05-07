@@ -27,7 +27,7 @@ jobs:
         cd src
         go mod init ssl_handshake
         go mod tidy
-        go build -o ../builds/
+        go build -o ../builds/ssl_handshake_${{github.run_number}}
         
     - name: Upload tag version for artifactory
       uses: actions/upload-artifact@v4
