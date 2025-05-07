@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        gh release create v1.2.3 release.tar.xz
+        gh release create v1.2.3 ssl_handshake
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
