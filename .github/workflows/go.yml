@@ -41,8 +41,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.version.outputs.version }}
-        release_name: Release ${{ steps.version.outputs.version }}
+        tag_name: ${{github.run_number}}
+        release_name: Release ${{github.run_number}}
 
     - name: upload linux amd64 artifact
       uses: actions/upload-release-asset@v1
