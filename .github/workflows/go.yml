@@ -33,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ssl_handshake
-        path: builds/ssl_handshake
+        path: builds/ssl_handshake_${{github.run_number}}
         if-no-files-found: error
