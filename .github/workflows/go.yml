@@ -36,9 +36,9 @@ jobs:
         if-no-files-found: error
 
     - name: upload linux amd64 artifact
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}"
-          asset_path: builds/ssl_handshake_${{github.run_number}}
-          asset_name: builds/ssl_handshake_${{github.run_number}}-linux-amd64.tgz
-          asset_content_type: application/tar+gzip
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}"
+        asset_path: builds/ssl_handshake_${{github.run_number}}
+        asset_name: builds/ssl_handshake_${{github.run_number}}-linux-amd64.tgz
+        asset_content_type: application/tar+gzip
