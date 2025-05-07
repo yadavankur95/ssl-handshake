@@ -39,7 +39,7 @@ jobs:
       run: |
         ls
         ls binaries
-        gh release create v1.2.3 binaries/ssl_handshake
+        gh release create v1.2.3 binaries
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
