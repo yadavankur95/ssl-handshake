@@ -32,12 +32,12 @@ jobs:
         path: binaries
         if-no-files-found: error
 
-  release:
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
+  # release:
+  #   runs-on: ubuntu-latest
+  #   steps:
+    - name: Creates a release in GitHub and uploads attachments
+      run: |
         gh release create v1.2.3 ssl_handshake.zip
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
-      name: Creates a release in GitHub and uploads attachments
