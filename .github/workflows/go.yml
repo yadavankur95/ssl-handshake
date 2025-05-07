@@ -37,7 +37,7 @@ jobs:
   #   steps:
     - name: Creates a release in GitHub and uploads attachments
       run: |
-        gh release create v1.2.3 ssl_handshake.zip
+        gh release create v1.2.3 ssl_handshake
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
