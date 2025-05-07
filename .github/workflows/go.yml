@@ -31,3 +31,13 @@ jobs:
         name: ssl_handshake
         path: binaries
         if-no-files-found: error
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        gh release create v1.2.3 release.tar.xz
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      shell: bash
+      name: Creates a release in GitHub and uploads attachments
